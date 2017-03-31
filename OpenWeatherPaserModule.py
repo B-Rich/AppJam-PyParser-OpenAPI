@@ -1,9 +1,12 @@
+#-*-coding:utf-8
+
 from urllib.request import Request, urlopen
 from urllib.parse import urlencode, quote_plus
 import json
 import time
+import ast
 
-def APIParse(service_key, cityid, doc, run):
+def APIParse(service_key, cityid, doc):
     if doc == True:
         print('''APIParse(KEY, ID, DOC-TRUE-FALSE, RUN-TRUE-FALSE)''')
     url = 'http://api.openweathermap.org/data/2.5/weather'
@@ -30,8 +33,17 @@ def APIParse(service_key, cityid, doc, run):
 
     return weather, avertemp,temp, humidity, pressure, time.time()
 
-def excute(run):
+def excute(run, key):
+    '''
+    with open('city.list.json') as citylistjson:
+        citylist = json.load(citylistjson)
+        #citylist = citylistjson.readlines()
+        citylist = str(citylist)
+        print(type(ast.literal_eval(citylist)))
+        '''
     while run == True:
-        data = APIParse(<KEY>, <CITYID>, True, True)
+        data = APIParse(key, '1835847', True)
         print(data)
         time.sleep(1800)
+
+excute(True, "e439f48431e739fcfd6c3127c1d0d582")
