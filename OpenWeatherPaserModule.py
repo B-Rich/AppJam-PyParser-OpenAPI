@@ -32,9 +32,6 @@ def APIParse(service_key, cityid, doc, run):
 
 def excute(run):
     while run == True:
-        data = APIParse('de82d6d4bc81413bce54f58ec194befb', '1835847', True, True)
+        data = APIParse(<KEY>, <CITYID>, True, True)
         print(data)
         time.sleep(1800)
-
-excute(True)
-print(APIParse('de82d6d4bc81413bce54f58ec194befb', '1835847', True, True))
