@@ -19,7 +19,7 @@ def APIParse(service_key, cityid, doc): #요청을 보내고 결과를 받는 �
     WeatherData = json.loads(response_body)
 
     weather = WeatherData['weather'][0]
-    weather = weather['main']
+    weather = weather['id']
 
     temp_min = WeatherData['main']['temp_min'] - 273.15
     temp_max = WeatherData['main']['temp_max'] - 273.15
@@ -30,8 +30,67 @@ def APIParse(service_key, cityid, doc): #요청을 보내고 결과를 받는 �
     pressure = WeatherData['main']['pressure']
 
     temp = WeatherData['main']['temp'] - 273.15
+    print(response_body)
+
+    if weather in list(range(200, 240)):
+        weather = "Thunderstorm"
+    elif weather in list(range(300, 322)):
+        weather = "Drizzle"
+    elif weather in list(range(500, 532)):
+        weather = "Rain"
+    elif weather in list(range(600, 623)):
+        weather = "Snow"
+    elif weather in [701, 721, 741]:
+        weather = "Fog"
+    elif weather == 711:
+        weather = "Smoke"
+    elif weather in [731, 751, 761]:
+        weather == "Sand"
+    elif weather == 800:
+        weather = "Clear"
+    elif weather in [801, 802, 803, 804]:
+        weather = "Cloudy"
+    elif weather == 901 or weather == 902 or weather == 960 or weather == 961 or weather == 962:
+        weather = "Storm"
+    elif weather == 951:
+        weather == "Calm"
+    elif weather in list(range(952, 960)):
+        weather == "Windy"
+    else:
+        weather = "Unknown"
+
+
+        '''
+        ::: Weather Code :::
+
+        Thunderstorm
+
+        Drizzle
+
+        Rain
+
+        Snow
+
+        Fog
+
+        Smoke
+
+        Sand
+
+        Claear
+
+        Cloudy
+
+        Storm
+
+        Calm
+
+        Windy
+        '''
+
 
     return weather, avertemp,temp, humidity, pressure
+
 
 def excute(run, key, city):#파서 함수를 실행
     find = True
@@ -60,7 +119,7 @@ def excute(run, key, city):#파서 함수를 실행
         #30분에 한번씩 요청을 보낸다.
 
 #예시 요청
-#excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Daejeon")
+excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Daejeon")
 #excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Busan")
 #excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Seoul")
 
@@ -68,5 +127,5 @@ def excute(run, key, city):#파서 함수를 실행
 '''
 excute함수에서 APIParse를 호풀해서 사용한다
  이그제큐트만 호출해서 사용하세요.
- CONTACT : lewis_kim@outlook.com
+ CONTACT : lewis_kim@outlook.com or Twitter : @lewisxyz_000
 '''
