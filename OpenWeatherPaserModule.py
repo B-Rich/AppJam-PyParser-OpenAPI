@@ -63,29 +63,29 @@ def APIParse(service_key, cityid, doc): #요청을 보내고 결과를 받는 �
         '''
         ::: Weather Code :::
 
-        Thunderstorm
+        Thunderstorm 폭풍
 
-        Drizzle
+        Drizzle 보슬비
 
-        Rain
+        Rain 비
 
-        Snow
+        Snow 눈
 
-        Fog
+        Fog 안개
 
-        Smoke
+        Smoke 스모그
 
-        Sand
+        Sand 황사
 
-        Claear
+        Claear 맑음
 
-        Cloudy
+        Cloudy 구름
 
-        Storm
+        Storm 폭풍(열대성)
 
-        Calm
+        Calm 고요함
 
-        Windy
+        Windy 바람
         '''
 
 
@@ -119,7 +119,7 @@ def excute(run, key, city):#파서 함수를 실행
         #30분에 한번씩 요청을 보낸다.
 
 #예시 요청
-excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Daejeon")
+#excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Daejeon")
 #excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Busan")
 #excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Seoul")
 
