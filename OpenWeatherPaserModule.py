@@ -31,7 +31,7 @@ def APIParse(service_key, cityid, doc): #요청을 보내고 결과를 받는 �
 
     temp = WeatherData['main']['temp'] - 273.15
 
-    return weather, avertemp,temp, humidity, pressure, time.time()
+    return weather, avertemp,temp, humidity, pressure
 
 def excute(run, key, city):#파서 함수를 실행
     find = True
@@ -58,9 +58,11 @@ def excute(run, key, city):#파서 함수를 실행
         #30분에 한번씩 요청을 보낸다.
 
 #예시 요청
-excute(True, "e439f48431e739fcfd6c3127c1d0d582", True)
+excute(True, "e439f48431e739fcfd6c3127c1d0d582", "Hoko")
 
 '''
 excute함수에서 APIParse를 호풀해서 사용한다
  이그제큐트만 호출해서 사용하세요.
+
+ Copyright(c) Lewisxyz000 ( Seonghyeon Kim ) 2017
 '''
