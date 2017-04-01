@@ -64,4 +64,6 @@ excute(True, "e439f48431e739fcfd6c3127c1d0d582", <CITY>)
 '''
 excute함수에서 APIParse를 호풀해서 사용한다
  이그제큐트만 호출해서 사용하세요.
+ CONTACT : lewis_kim@outlook.com
+ 
 '''
