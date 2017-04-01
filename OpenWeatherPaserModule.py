@@ -34,13 +34,12 @@ def APIParse(service_key, cityid, doc):
     return weather, avertemp,temp, humidity, pressure, time.time()
 
 def excute(run, key):
-    '''
-    with open('city.list.json') as citylistjson:
+
+    with open('city.list.kr.json') as citylistjson:
         citylist = json.load(citylistjson)
-        #citylist = citylistjson.readlines()
-        citylist = str(citylist)
-        print(type(ast.literal_eval(citylist)))
-        '''
+        citylist = ast.literal_eval(str(citylist))
+        print(citylist)
+
     while run == True:
         data = APIParse(key, '1835847', True)
         print(data)
