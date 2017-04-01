@@ -102,15 +102,19 @@ def excute(run, key, city):#파서 함수를 실행
         citylist = json.load(citylistjson)
         citylist = ast.literal_eval(str(citylist))
 
-        while find == True:
-            #입력받은 도시의 코드 찾기
-            tmp = citylist[count]
-            if tmp["name"] == city:
-                print(tmp.get("_id"))
-                find = False
-                cityid = tmp.get("_id")
-                #찾으면 반복문 종료
-            count += 1
+        try:
+            while find == True:
+                #입력받은 도시의 코드 찾기
+                tmp = citylist[count]
+                if tmp["name"] == city:
+                    print(tmp.get("_id"))
+                    find = False
+                    cityid = tmp.get("_id")
+                    #찾으면 반복문 종료
+                count += 1
+        except IndexError:
+            print("No Such City Please rerun with right city name ")
+
 
     while run == True:
         data = APIParse(service_key=key, cityid=cityid, doc=False)
@@ -121,7 +125,7 @@ def excute(run, key, city):#파서 함수를 실행
 #예시 요청
 #excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Daejeon")
 #excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Busan")
-#excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Seoul")
+print(excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Seoul"))
 
 
 '''
