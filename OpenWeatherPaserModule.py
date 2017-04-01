@@ -49,21 +49,21 @@ def excute(run, key, city):#파서 함수를 실행
             if tmp["name"] == city:
                 print(tmp.get("_id"))
                 find = False
+                cityid = tmp.get("_id")
                 #찾으면 반복문 종료
             count += 1
 
     while run == True:
-        data = APIParse(key, '1835847', False)
+        data = APIParse(service_key=key, cityid=cityid, doc=False)
         print(data)
         time.sleep(1800)
         #30분에 한번씩 요청을 보낸다.
 
 #예시 요청
-excute(True, "e439f48431e739fcfd6c3127c1d0d582", <CITY>)
+excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Seoul")
 
 '''
 excute함수에서 APIParse를 호풀해서 사용한다
  이그제큐트만 호출해서 사용하세요.
  CONTACT : lewis_kim@outlook.com
- 
 '''
