@@ -60,7 +60,10 @@ def excute(run, key, city):#파서 함수를 실행
         #30분에 한번씩 요청을 보낸다.
 
 #예시 요청
-excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Seoul")
+#excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Daejeon")
+#excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Busan")
+#excute(run=True, key="e439f48431e739fcfd6c3127c1d0d582", city="Seoul")
+
 
 '''
 excute함수에서 APIParse를 호풀해서 사용한다
