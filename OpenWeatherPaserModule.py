@@ -39,6 +39,7 @@ def excute(run, key, city):#파서 함수를 실행
 
     with open('city.list.kr.json') as citylistjson:
         #with문은 도시 목록을 불러옴
+        #한국 도시 리스트만 불러옵니다.
         citylist = json.load(citylistjson)
         citylist = ast.literal_eval(str(citylist))
 
@@ -58,7 +59,7 @@ def excute(run, key, city):#파서 함수를 실행
         #30분에 한번씩 요청을 보낸다.
 
 #예시 요청
-excute(True, "e439f48431e739fcfd6c3127c1d0d582", "Hoko")
+excute(True, "e439f48431e739fcfd6c3127c1d0d582", <CITY>)
 
 '''
 excute함수에서 APIParse를 호풀해서 사용한다
